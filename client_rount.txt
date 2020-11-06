@@ -1,0 +1,106 @@
+Points of improvments
+=====================
+
+1. Performance - be smart to answer 
+					- don't be blunt - 
+						- did a poc, etc... 
+			 - be confident don't get confused
+			 - oracle 
+			 
+			 
+2. technical aspects - 
+
+
+-----
+I SQL
+-----
+
+****a. partitions - extensivly used - no downtime in ey systems 
+					- purpose 
+					- partiton pruning - if there are 100 , we just have to specify the range - it will automatically - based on predicates
+					- partition exchange 
+	b.	indexing - can also degrade preformance - why do we need it then - gain performance at the right place
+				 - enable disable indexes when?
+					- bulk - disable perfomancce
+				 - clustered index - major disadvantages - ???
+	c.  anlytics - now_number
+					listagg
+					level
+					dense/dense_rank
+	d. views - simple/com
+			 - materialized view - advanatages
+						- dml logging at view level
+	e. with clause and GTT and major differeces - gtt at session level
+	
+	f. synonyms - public private
+---------	
+II PL/SQL 
+---------
+
+	a. how do u start creating a pacakge
+	b. public and private object
+****c. bulk collect - limit clause - undo space usage 
+					- dml logging / save exceptions
+					- for vs forall - http://dba-oracle.com/plsql/t_plsql_exceptions.htm
+														
+	d. cursors - types esp ref_cursors
+				- when to use which
+	e. triggers - types 
+				- prama_autonomation transactions - when to use ?
+				
+****f. pipeline functions - enable a function in parallel - advantages
+****g. table functions
+****h. collections - nested table - assosciative array
+
+-------	
+III ODI
+-------
+
+	a. split component - alternative in 11g
+	b. odiWaitForDAta and odiWaitForLog
+	c. cdc - simple/consistnet
+			- how to promote cdc to test env - how to add subs
+			- how would you parallely run
+	d. ikm - for oraccle specifically
+			- increment
+			- detection stragegy
+	e. ikm customization - 1 or 2 instances 
+	f. sqlloader and external file - which is the best and why?
+	g. how to avoid c$ tables
+	h. if you start a scenario what will happen - all the steps - describe the flow - relationship between differenct steps - 
+			-optimization context - ??
+	i. agent - types
+			 - what circumstance 
+			 - load balanceing and clustering
+			 - array fetch / bulk update
+			 - connection pooling = threading what's the purpose of it??
+	* suggest best practices not just run-of-mill implementation
+	* parameterized execution 
+	* originality is expected
+---------------------	
+IV perfomance tuning
+---------------------
+
+	a. partition and indexes - under what circumstance. 
+		- how do we analyze a long running session
+		 - is the db resources, is it table stats
+		 - maybe bad sql 
+		 - how does it choose the best path
+	b. sql monitor - awr - sql maria 
+	c. pga 
+	d. baselining 
+	e. EXPAIN PLAN **** 
+		access method
+			- nested loop 
+			- hash joins  
+			- sort-merge  
+	f. long running sql was fine but since last week it got screwed? how would you 
+	
+odi >> sql + plsql >> perfomance tuning 
+
+multiple threads = "no concurrent" = 
+load distribution
+
+chunking 
+					
+				
