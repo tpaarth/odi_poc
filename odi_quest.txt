@@ -1,0 +1,66 @@
+===
+ODI
+===
+https://support.oracle.com/knowledge/Middleware/471564_1.html#aref_section276
+
+
+JKM cdc
+	- exchange partition in odi - switching partion between tables - odi km - new km 
+
+for real time integration- 
+	- we can cdc jrn$date field
+	- we can alternatively row_id 
+
+100gb data - how to dump to oracle - sqlloader - high level watermark - 
+	drawback - table lock insert append mode
+	LKM
+
+agents  - standalone
+		- collocated
+		- j2ee - high avaliablity env
+				- speed consistancy
+				- connection pooling *****
+				- load balancing
+				
+======
+pl/sql
+======
+
+bulk commit - 
+	-- roll back even after commit 
+		- savepoints
+	-- transaction isolation
+	-- undo redo logs - at dba level
+	-- exception handling within bulk 
+		- "save exception clause"
+		- pragma autonomous exceptions
+		
+table partitioning
+	-- range partion
+	-- exchnage partion
+	https://ittutorial.org/partitioning-types-range-list-hash-interval-in-oracle-database/
+	
+
+direct path inserts
+	- high water mark 
+	- how to start: use these hints
+		- append - single cpu
+		- parallel - parallel threads
+					- multiple cpus
+						- in case of failure 
+
+trigger basiscs - NO you cant commit in triggers
+
+=======
+check 
+=======
+
+1. How would you load several files in parallel into a table + exception handling
+2. How would you load a 100gb orac table to table
+3. How do we eliminate LKM if we have data present in 2 data servers.
+4. what are the disadvantages of bitmap index? what other indexes do we have?
+6. why use partitions? how would you access a partition? 
+7. Oracle GTT - global temp tabels
+8. where is the data of a view in oracle stored
+	
+	
