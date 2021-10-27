@@ -10,3 +10,4 @@ send mail html - https://jomavifi.wordpress.com/tag/load-plan/
 rest api odi - https://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/odi/odi_12c/odi_12.2.1.1/Integrating_RESTful_Services/ODI_12_2_1_REST.html
 send mail mos - https://support.oracle.com/knowledge/Middleware/2181081_1.html
 cdc reusable map - http://schnellercitius.blogspot.com/2016/08/configure-cdc-odi-12c-with-reusable.html
+pdf in odi - https://blogs.oracle.com/dataintegration/post/odi-java-table-function-for-pdf-capture
