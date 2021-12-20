@@ -14,13 +14,13 @@ from
       inner join snp_project proj on folder.i_project = proj.i_project
     WHERE 1=1
     --and mapp.name       in('WC_C2P_MEDICAID_CLAIM_F','INT_ODS2SFTYREP_RECEIPT_XREF_LOAD_SEG1_SEG3 ')---'WC_QUADS_PHASE_F_CAPA' ---Mapping name
-    and proj.project_name in ('VAI_INGESTION_CSV')
+    and proj.project_name in ('PROJ_VAI')
   )
   select mb.mapping_name
   , mb.comp_type
   , listagg(to_char(EXP.TXT),';') within group (order by mb.name) descr
-  from mb
-    inner join snp_map_prop PROP on mb.I_MAP_COMP = prop.i_owner_mapping--prop.I_OWNER_MAP_COMP
+  FROM MB
+    inner join snp_map_prop prop on mb.I_MAP_COMP = prop.I_OWNER_MAPPING--I_OWNER_MAP_COMP
     inner join SNP_MAP_PROP_DEF prop_def on PROP.I_PROP_DEF = PROP_DEF.I_MAP_PROP_DEF
     inner join snp_map_expr exp on PROP.I_MAP_PROP = EXP.I_OWNER_MAP_PROP
   where 1=1
@@ -70,8 +70,8 @@ from
   , listagg(attr.name,';') within group (order by sort_pos) descr
   from mb
     inner join snp_map_cp cp on mb.i_map_comp = cp.i_owner_map_comp
-    inner join snp_map_attr attr on cp.I_MAP_CP = attr.I_OWNER_MAP_CP
-    inner join snp_map_prop prop on attr.i_map_attr = prop.i_map_attr
+    INNER JOIN SNP_MAP_ATTR ATTR ON CP.I_MAP_CP = ATTR.I_OWNER_MAP_CP
+    inner join snp_map_prop prop on attr.i_map_attr = prop.i_map_attr--prop.i_owner_map_attr
     inner join SNP_MAP_PROP_DEF prop_def on PROP.I_PROP_DEF = PROP_DEF.I_MAP_PROP_DEF
   where 1=1
   and cp.i_map_cp not in (select i_start_map_cp from snp_map_conn)
