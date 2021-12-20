@@ -20,7 +20,7 @@ from
   , mb.comp_type
   , listagg(to_char(EXP.TXT),';') within group (order by mb.name) descr
   FROM MB
-    inner join snp_map_prop prop on mb.I_MAP_COMP = prop.I_OWNER_MAPPING--I_OWNER_MAP_COMP
+    inner join snp_map_prop prop on mb.I_MAP_COMP = prop.I_MAP_COMP
     inner join SNP_MAP_PROP_DEF prop_def on PROP.I_PROP_DEF = PROP_DEF.I_MAP_PROP_DEF
     inner join snp_map_expr exp on PROP.I_MAP_PROP = EXP.I_OWNER_MAP_PROP
   where 1=1
@@ -78,9 +78,9 @@ from
   and prop_def.prop_name like 'KEY_INDICATOR' group by mb.mapping_name
   )
 pivot
-  ( min(DESCR)
-    FOR comp_type IN ('Description' as Description
-                     ,'JOIN' as Join_conditions
+  ( MIN(DESCR)
+    FOR comp_type IN ('Description' as Description,
+                     'JOIN' as Join_conditions
                      ,'FILTER' as filter_conditons
                      ,'SOURCE DS' as source_datastores
                      ,'TARGET DS' as target_datastores
