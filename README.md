@@ -11,3 +11,4 @@ rest api odi - https://www.oracle.com/webfolder/technetwork/tutorials/obe/fmw/od
 send mail mos - https://support.oracle.com/knowledge/Middleware/2181081_1.html
 cdc reusable map - http://schnellercitius.blogspot.com/2016/08/configure-cdc-odi-12c-with-reusable.html
 pdf in odi - https://blogs.oracle.com/dataintegration/post/odi-java-table-function-for-pdf-capture
+odiSQLunload pwd issue - https://support.oracle.com/knowledge/Middleware/2470588_1.html#aref_section41
